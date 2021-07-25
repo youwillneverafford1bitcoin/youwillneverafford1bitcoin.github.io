@@ -1,0 +1,7 @@
+# macOS files
+
+.DS_Store
+
+# emacs temporary save files
+
+*~
