@@ -40,12 +40,11 @@ mp3.onplay = () => {
     document.getElementById("marqueee").stop();
     //put that^ there because w/o it and only using .start(), when the user pauses the mp3 and plays it again, the marquee speeds up
     document.getElementById("marqueee").start();
+    if(playCount < 1){
     document.getElementById("song-stat").innerHTML = "<mark>RADIO'S PLAYING, SPRINGSTEEN BLASTING</mark>";
-
+}
     for (const player of music) player.style.visibility = "visible";
-
     for (const text of texts) text.style.color = "white";
-    
     for (const title of page) title.style.color = "yellow";
 };
 
@@ -54,9 +53,9 @@ mp3.addEventListener('ended', function(){
         mp3.pause();
         mp3.src= "./assets/audio/there-will-be-fireworks--off-with-their-heads.mp3";
         console.log("FUARKKKKKK LEZ GOOOO ROCK N ROLL")
-        document.getElementById("song-stat").innerHTML = "<mark>it's ROCK AND ROLL time baby</mar>";
         mp3.load();
         mp3.play();
+        document.getElementById("song-stat").innerHTML = "<mark style='background-color: orange'>NOW <b>it's ROCK AND ROLL time baby</b>!</mark>";
         playCount++;
     }
 });
